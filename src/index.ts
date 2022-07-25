@@ -31,3 +31,10 @@ employee = [
     [2, 'Muto'],
     [3, 'Aratema']
 ]
+
+// -------- Unions -------- //
+// if you want one particular variable to hold one than one type
+// e.g ID can be number or string
+let productId: string | number;
+productId = 22;
+productId = '22fd';
