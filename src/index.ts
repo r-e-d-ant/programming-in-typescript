@@ -38,3 +38,21 @@ employee = [
 let productId: string | number;
 productId = 22;
 productId = '22fd';
+
+// -------- Enum -------- //
+// to define set of named constant
+enum Direction1 {
+    Up = 1,
+    Down,
+    Left,
+    Right
+}
+enum Direction2 {
+    Up = 'Up',
+    Down = 'Down',
+    Left = 'Left',
+    Right = 'Right'
+}
+console.log(Direction2.Left);
+
+// -------- Objects -------- //
