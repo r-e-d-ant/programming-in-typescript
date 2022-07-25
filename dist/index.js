@@ -57,3 +57,10 @@ const user2 = {
     id: 1,
     name: 'John'
 };
+// -------- Type Assertion -------- //
+// Trick entity as a different types
+let cid = 5;
+let customerId = cid; // set cid to customerId but with a different type;
+// or
+let customerId1 = cid;
+console.log(customerId);
