@@ -83,3 +83,48 @@ const add = (x, y) => x + y;
 const sub = (x, y) => x - y;
 console.log(add(2, 2));
 console.log(sub(2022, 2002));
+// -------- Classes -------- //
+class Person {
+    constructor(id, name) {
+        this.id = id;
+        this.name = name;
+    }
+    register() {
+        return `${this.name} is now registered`;
+    }
+}
+const tito = new Person(24300, 'Tito');
+const muto = new Person(24108, 'Muto');
+// tito.id = 200; // invalid because 'id' is set to private
+// console.log(tito.id); // invalid because 'id' is set to private
+console.log(tito, muto);
+console.log(tito.register());
+class Person1 {
+    constructor(id, name) {
+        this.id = id;
+        this.name = name;
+    }
+    register() {
+        return `${this.name} is now registered`;
+    }
+}
+const satb = new Person(24300, 'Sat-B');
+const fizzo = new Person(24108, 'Big Fizzo');
+// exteding our person class
+// Subclasses
+class Employee extends Person1 {
+    constructor(id, name, position) {
+        super(id, name);
+        this.position = position;
+    }
+}
+const emp = new Employee(3, 'Big Fizzo', 'Singer');
+console.log(emp.name);
+console.log(emp.register());
+// -------- Generics -------- //
+// it allow us to create reusable components and use placeholder and we can replace them with any datatype we want
+function getArray(items) {
+    return new Array().concat(items);
+}
+let numArray = getArray([1, 2, 3, 4, 5]);
+let strArray = getArray(['a', 'b', 'c', 'd', 'e']);

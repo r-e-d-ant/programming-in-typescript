@@ -111,8 +111,8 @@ const id1: id = 1;
 */
 // it's kind like custom type or a specif structure to an object or a function
 interface UserInterface {
-    readonly id: number, // read only property 
-    name: String,
+    readonly id: number // read only property 
+    name: String
     age?: number // age property is optional
 }
 
@@ -133,3 +133,78 @@ const sub: MathFunc = (x: number, y: number): number => x - y;
 
 console.log(add(2, 2));
 console.log(sub(2022, 2002));
+
+// -------- Classes -------- //
+class Person {
+    // private mean you should only access this property within the class. or class which extended from this class (private/protected)
+    private id: number
+    name: string
+
+    constructor(id: number, name: string) {
+        this.id = id;
+        this.name = name;
+    }
+
+    register() {
+        return `${this.name} is now registered`;
+    }
+}
+
+const tito = new Person(24300, 'Tito');
+const muto = new Person(24108, 'Muto');
+
+// tito.id = 200; // invalid because 'id' is set to private
+// console.log(tito.id); // invalid because 'id' is set to private
+
+console.log(tito, muto);
+console.log(tito.register());
+
+// -------- Classess with Interfaces //
+interface PersonInterface {
+    id: number // read only property 
+    name: String
+    register(): string
+}
+
+class Person1 implements PersonInterface {
+    // private mean you should only access this property within the class. or class which extended from this class (private/protected)
+    id: number
+    name: string
+
+    constructor(id: number, name: string) {
+        this.id = id;
+        this.name = name;
+    }
+
+    register() {
+        return `${this.name} is now registered`;
+    }
+}
+
+const satb = new Person(24300, 'Sat-B');
+const fizzo = new Person(24108, 'Big Fizzo');
+
+// exteding our person class
+// Subclasses
+class Employee extends Person1 {
+    position: string
+
+    constructor(id: number, name: string, position: string) {
+        super(id, name);
+        this.position = position;
+    }
+}
+
+const emp = new Employee(3, 'Big Fizzo', 'Singer');
+console.log(emp.name);
+console.log(emp.register());
+
+// -------- Generics -------- //
+// it allow us to create reusable components and use placeholder and we can replace them with any datatype we want
+
+function getArray<T>(items: T[]): T[] { // T as a place holder
+    return new Array().concat(items);
+}
+
+let numArray = getArray<number>([1,2,3,4,5]);
+let strArray = getArray<string>(['a','b','c','d','e']);
