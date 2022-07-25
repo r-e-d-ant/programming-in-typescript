@@ -75,3 +75,11 @@ function log(message) {
 }
 log("Hello, World!");
 log(2002);
+const user3 = {
+    id: 1,
+    name: 'John'
+};
+const add = (x, y) => x + y;
+const sub = (x, y) => x - y;
+console.log(add(2, 2));
+console.log(sub(2022, 2002));

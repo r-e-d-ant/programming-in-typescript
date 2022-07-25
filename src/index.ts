@@ -97,3 +97,39 @@ function log(message: string | number): void {
 }
 log("Hello, World!");
 log(2002);
+
+// -------- Interfaces -------- //
+// ! you can't do unions in when using Interfaces instead of type
+/*
+• valid
+type id = number | string;
+const id1: id = 1;
+
+• invalid
+interface id = number | string;
+const id1: id = 1;
+*/
+// it's kind like custom type or a specif structure to an object or a function
+interface UserInterface {
+    readonly id: number, // read only property 
+    name: String,
+    age?: number // age property is optional
+}
+
+const user3: UserInterface = {
+    id: 1,
+    name: 'John'
+}
+
+// user3.id = 5; // will not work because it's ready only prop.
+
+// -------- Interfaces with Functions //
+interface MathFunc {
+    (x: number, y: number): number;
+}
+
+const add: MathFunc = (x: number, y: number): number => x + y;
+const sub: MathFunc = (x: number, y: number): number => x - y;
+
+console.log(add(2, 2));
+console.log(sub(2022, 2002));
