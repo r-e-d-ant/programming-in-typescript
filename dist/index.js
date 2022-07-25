@@ -64,3 +64,14 @@ let customerId = cid; // set cid to customerId but with a different type;
 // or
 let customerId1 = cid;
 console.log(customerId);
+// -------- Functions -------- //
+function addNum(x, y) {
+    return x + y;
+}
+console.log(addNum(1, 2));
+// if there's no return value
+function log(message) {
+    console.log(message);
+}
+log("Hello, World!");
+log(2002);

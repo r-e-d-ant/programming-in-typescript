@@ -78,9 +78,22 @@ const user2: User = {
 
 // -------- Type Assertion -------- //
 // Trick entity as a different types
-
 let cid: any = 5;
 let customerId = <number>cid; // set cid to customerId but with a different type;
 // or
 let customerId1 = cid as number;
 console.log(customerId);
+
+// -------- Functions -------- //
+function addNum(x: number, y: number): number {
+    return x + y;
+}
+
+console.log(addNum(1, 2));
+
+// if there's no return value
+function log(message: string | number): void {
+    console.log(message);
+}
+log("Hello, World!");
+log(2002);
