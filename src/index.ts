@@ -19,3 +19,15 @@ ids.push(2002);
 for(var i: number = 0; i < ids.length; i++) {
     console.log(ids[i]);
 }
+
+// -------- Tuples -------- //
+// Tuple
+let person: [number, string, boolean] = [1, 'Tito', true];
+// Tuple Array: Array of tuples
+let employee: [number, string][];
+
+employee = [
+    [1, 'Tito'],
+    [2, 'Muto'],
+    [3, 'Aratema']
+]
