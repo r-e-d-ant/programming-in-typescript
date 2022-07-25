@@ -56,3 +56,22 @@ enum Direction2 {
 console.log(Direction2.Left);
 
 // -------- Objects -------- //
+const user1: {
+    id: number,
+    name: string
+} = {
+    id: 1,
+    name: 'John'
+}
+
+// or
+
+type User = {
+    id: number,
+    name: String
+}
+
+const user2: User = {
+    id: 1,
+    name: 'John'
+}
